@@ -1,0 +1,12 @@
+[DEFAULT]
+banaction = nginx-deny
+backend   = auto
+
+[nginx-http-auth]
+enabled  = true
+port     = http,https
+filter   = nginx-http-auth
+logpath  = /var/log/nginx/error.log
+maxretry = 5
+findtime = 10m
+bantime  = 1h

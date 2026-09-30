@@ -1,0 +1,13 @@
+services:
+  webdav:
+    build: ./src
+    container_name: webdav
+    restart: unless-stopped
+    ports:
+      - "10007:8080"
+    volumes:
+      - /mnt/storage:/data
+    environment:
+      TRUSTED_PROXY_CIDR: "10.10.1.0/24"
+      WEBDAV_USER: username
+      WEBDAV_PASSWORD: password
